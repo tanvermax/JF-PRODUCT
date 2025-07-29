@@ -64,33 +64,33 @@ const Slider = () => {
         </div>
 
         {/* Center Main Slide */}
-        <div className="relative z-10 w-full lg:w-[60%] bg-[#f3f4f6] rounded-3xl shadow-md p-6  grid grid-cols-2 gap-8">
+        <div className="relative z-10 w-full lg:w-[60%] bg-[#f3f4f6] rounded-3xl shadow-md md:p-6 p-2 grid grid-cols-2 gap-8">
           {/* Left Arrow */}
           <button
             onClick={prevSlide}
-            className="absolute -left-6 top-1/2 transform -translate-y-1/2 bg-lime-400 hover:bg-lime-500 text-black w-10 h-10 rounded-full flex items-center justify-center text-xl shadow-md"
+            className="absolute -left-6 top-1/2 transform -translate-y-1/2 bg-lime-400 hover:bg-lime-500 text-black w-8 md:w-10 h-8 md:h-10 rounded-full flex items-center justify-center md:text-xl shadow-md"
           >
             <LuArrowLeft />
           </button>
 
           {/* Image */}
-          <div className="w-full  bg-white rounded-2xl bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:10px_10px] flex items-center justify-center">
+          <div className="w-full p-2 md:h-full  h-30 my-auto bg-white rounded-2xl bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:10px_10px] flex items-center justify-center">
             <img
               src={sliderData[current].image}
               alt={sliderData[current].title}
-              className="rounded-2xl p-6 object-contain"
+              className="rounded-2xl  md:p-6 object-contain"
             />
           </div>
 
           {/* Text */}
           <div className=" text-center md:text-left content-center">
-            <h2 className="text-3xl md:text-[62px] font-medium text-gray-900 mb-2">
+            <h2 className="text-base md:text-[62px] font-medium text-gray-900 mb-2">
               {sliderData[current].title}
             </h2>
-            <p className="text-gray-700 mb-4 text-lg py-5">
+            <p className="text-gray-700 mb-4 text-[9px] md:text-lg md:py-5">
               {sliderData[current].description}
             </p>
-            <button className="bg-lime-400 hover:bg-lime-500 text-black font-semibold py-2 px-5 rounded-full shadow">
+            <button className="bg-lime-400 hover:bg-lime-500 text-black font-semibold md:py-2 md:px-5 px-3 py-1 rounded-full text-[9px] md:text-base shadow">
               Shop Now
             </button>
           </div>
@@ -98,7 +98,7 @@ const Slider = () => {
           {/* Right Arrow */}
           <button
             onClick={nextSlide}
-            className="absolute -right-6 top-1/2 transform -translate-y-1/2 bg-lime-400 hover:bg-lime-500 text-black w-10 h-10 rounded-full flex items-center justify-center text-xl shadow-md"
+            className="absolute -right-6 top-1/2 transform -translate-y-1/2 bg-lime-400 hover:bg-lime-500 text-black w-8 md:w-10 h-8 md:h-10 rounded-full flex items-center justify-center text-xl shadow-md"
           >
             <GoArrowRight />
           </button>

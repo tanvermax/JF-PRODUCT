@@ -16,7 +16,7 @@ const Home = () => {
             <Landscape />
             <TrustIndicators />
             <WhyUsSection />
-            <div className='py-14 overflow-hidden -ml-3'>
+            <div className='md:py-14 overflow-hidden -ml-3'>
                 <ShippingQualityBanner />
             </div>
             <Testimonial />

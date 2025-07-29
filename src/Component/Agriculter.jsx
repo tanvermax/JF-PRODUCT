@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { BsArrowRightCircle } from "react-icons/bs";
-
 
 const ProductCarousel = () => {
   const products = [
@@ -10,7 +9,6 @@ const ProductCarousel = () => {
       price: "₹4,995.00",
       hasButton: true,
       photo: "https://i0.wp.com/noags.co.za/wp-content/uploads/1103002.jpg?fit=500%2C497&ssl=1",
-
     },
     {
       id: 2,
@@ -25,7 +23,6 @@ const ProductCarousel = () => {
       price: "₹1,260.00 – ₹10,750.00",
       hasButton: true,
       photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjdUrtAam-RFEEzmvBvYRSC7Xiy9bfVxrorw&s",
-
     },
     {
       id: 4,
@@ -33,7 +30,6 @@ const ProductCarousel = () => {
       price: "IT1,646.10 – IT8,284.10",
       hasButton: true,
       photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRK44558cycZ7ILiWTu2IzvJEeHlHeuRsJNTw&s",
-
     },
     {
       id: 11,
@@ -41,7 +37,6 @@ const ProductCarousel = () => {
       price: "₹4,995.00",
       hasButton: true,
       photo: "https://i0.wp.com/noags.co.za/wp-content/uploads/1103002.jpg?fit=500%2C497&ssl=1",
-
     },
     {
       id: 21,
@@ -56,7 +51,6 @@ const ProductCarousel = () => {
       price: "₹1,260.00 – ₹10,750.00",
       hasButton: true,
       photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjdUrtAam-RFEEzmvBvYRSC7Xiy9bfVxrorw&s",
-
     },
     {
       id: 41,
@@ -64,42 +58,63 @@ const ProductCarousel = () => {
       price: "IT1,646.10 – IT8,284.10",
       hasButton: true,
       photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRK44558cycZ7ILiWTu2IzvJEeHlHeuRsJNTw&s",
-
     },
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
-  const cardsToShow = 4;
+  const [cardsToShow, setCardsToShow] = useState(4);
+
+  useEffect(() => {
+    const updateCardsToShow = () => {
+      const width = window.innerWidth;
+      if (width < 640) {
+        setCardsToShow(1);
+      } else if (width < 768) {
+        setCardsToShow(2);
+      } else if (width < 1024) {
+        setCardsToShow(3);
+      } else {
+        setCardsToShow(4);
+      }
+    };
+
+    updateCardsToShow();
+    window.addEventListener("resize", updateCardsToShow);
+    return () => window.removeEventListener("resize", updateCardsToShow);
+  }, []);
 
   const nextSlide = () => {
-    setCurrentIndex((prevIndex) => 
+    setCurrentIndex((prevIndex) =>
       prevIndex + 1 <= products.length - cardsToShow ? prevIndex + 1 : 0
     );
   };
 
   const prevSlide = () => {
-    setCurrentIndex((prevIndex) => 
+    setCurrentIndex((prevIndex) =>
       prevIndex - 1 >= 0 ? prevIndex - 1 : products.length - cardsToShow
     );
   };
 
-  // Calculate which products to display
   const visibleProducts = products.slice(currentIndex, currentIndex + cardsToShow);
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <h1 className="text-3xl font-semibold  py-8">Agricultural Products</h1>
-      
+    <div className="md:max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 md:py-12">
+      <h1 className="md:text-3xl text-xl font-semibold py-8">Agricultural Products</h1>
+
       <div className="relative">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+        {/* Cards Container */}
+        <div className="flex flex-wrap md:flex-nowrap gap-6 overflow-hidden transition-all duration-300">
           {visibleProducts.map((product) => (
-            <div key={product.id} className="bg-[#F2F4F6] rounded-lg shadow-md p-1 overflow-hidden hover:shadow-lg transition-shadow">
+            <div
+              key={product.id}
+              className="flex-1 min-w-[250px] max-w-full md:w-auto bg-[#F2F4F6] rounded-lg shadow-md p-1 hover:shadow-lg transition-shadow"
+            >
               <div className="p-3">
-                <img className='rounded-3xl h-64' src={product.photo} alt="" />
-                <h3 className="text-xl py-4 font-semibold mb-2">{product.name}</h3>
+                <img className="rounded-3xl md:h-64 h-34 w-full object-cover" src={product.photo} alt={product.name} />
+                <h3 className="md:text-xl md:h-18 h-10 py-4 font-semibold mb-2">{product.name}</h3>
                 <p className="text-gray-600 pb-5">{product.price}</p>
                 {product.hasButton && (
-                  <button className=" bg-[#B0DD1D] text-black hover:bg-green-700  py-2 px-4 rounded-4xl transition-colors">
+                  <button className="bg-[#B0DD1D] text-black hover:bg-green-700 py-2 px-4 rounded-4xl transition-colors">
                     Shop Now
                   </button>
                 )}
@@ -107,26 +122,21 @@ const ProductCarousel = () => {
             </div>
           ))}
         </div>
-        
-        {/* Navigation buttons */}
-        <button 
+
+        {/* Navigation Buttons */}
+        <button
           onClick={prevSlide}
-          className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 bg-white rounded-full   hover:bg-gray-100 transition-colors"
+          className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 bg-white rounded-full p-2 hover:bg-gray-100 shadow"
         >
-                  <BsArrowRightCircle className='text-4xl text-[#575656] rotate-180 ' />
-
+          <BsArrowRightCircle className="md:text-4xl text-2xl text-[#575656] rotate-180" />
         </button>
-        
-        <button 
+        <button
           onClick={nextSlide}
-          className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 bg-white rounded-full shadow-md  hover:bg-gray-100 transition-colors"
+          className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 bg-white rounded-full p-2 hover:bg-gray-100 shadow"
         >
-         <BsArrowRightCircle className='text-4xl  text-[#575656] '/>
-
-
+          <BsArrowRightCircle className="md:text-4xl text-2xl text-[#575656]" />
         </button>
       </div>
-      
     </div>
   );
 };

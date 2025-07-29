@@ -157,8 +157,8 @@ const ContactBranch = () => {
 
                         </div>
                         <div>
-                            <strong>JRR Towers</strong> (2nd Floor), Pattalamma Temple Rd, <br />
-                            Basavanagudi, Bangalore, 560004
+                            <p className="text-xs md:text-base"><strong>JRR Towers</strong> (2nd Floor), Pattalamma Temple Rd, <br />
+                            Basavanagudi, Bangalore, 560004</p>
                         </div>
                     </div>
                 </div>

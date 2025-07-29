@@ -5,14 +5,15 @@ const WhyUsSection = () => {
     <section className="py-12 max-w-7xl mx-auto px-4 md:px-20 bg-white text-center">
       <h2 className="text-4xl font-bold mb-2">Why Us</h2>
 
-      <p className="mt-4 max-w-3xl  mx-auto text-gray-700 text-lg">
+      <p className="mt-4 max-w-3xl mx-auto text-gray-700 text-lg">
         We specialize in delivering durable and innovative fencing solutions built to last. With a focus on quality and trust, we help secure spaces across industries and communities.
       </p>
 
-      <div className="mt-20 grid md:grid-cols-3 gap-6 ">
+      <div className="mt-20 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         {/* Card 1 */}
-        <div className="bg-gradient-to-br from-white to-blue-300 shadow-lg p-10 rounded-2xl text-left">
-          <div className="mb-4">
+        <div className="bg-gradient-to-br from-white to-blue-300 shadow-lg p-6 md:p-10 rounded-2xl text-center md:text-left">
+          <div className="mb-4 flex justify-center md:justify-start">
+            {/* SVG icon */}
             <svg width="51.000000" height="71.984863" viewBox="0 0 51 71.9849" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
               <desc>
                 Created with Pixso.
@@ -25,17 +26,19 @@ const WhyUsSection = () => {
               <path id="Vector" d="M42.58 46.5L44.93 57.73C46.44 64.95 47.19 68.56 45.64 70.27C44.09 71.98 41.41 70.51 36.03 67.56L28.07 63.21C26.8 62.51 26.17 62.17 25.5 62.17C24.82 62.17 24.19 62.51 22.92 63.21L14.96 67.56C9.58 70.51 6.9 71.98 5.35 70.27C3.8 68.56 4.55 64.95 6.06 57.73L8.41 46.5" stroke="#1A1A1A" stroke-opacity="1.000000" stroke-width="2.000000" stroke-linejoin="round" stroke-linecap="round" />
               <path id="Vector" d="M42.58 46.5L44.93 57.73C46.44 64.95 47.19 68.56 45.64 70.27C44.09 71.98 41.41 70.51 36.03 67.56L28.07 63.21C26.8 62.51 26.17 62.17 25.5 62.17C24.82 62.17 24.19 62.51 22.92 63.21L14.96 67.56C9.58 70.51 6.9 71.98 5.35 70.27C3.8 68.56 4.55 64.95 6.06 57.73L8.41 46.5" stroke="#000000" stroke-opacity="0.200000" stroke-width="2.000000" stroke-linejoin="round" stroke-linecap="round" />
             </svg>
-
           </div>
-          <h3 className="text-[26px] font-medium mb-2">Unmatched Durability with Corrosion-Free Technology</h3>
-          <p className="text-gray-600 text-[17px]">
-            Our JF-270 barbed wire features a robust 270 GSM zinc coating, ensuring superior resistance against rust and corrosion. Paired with stainless steel binding wire, our fencing solutions are designed to withstand harsh environmental conditions, offering longevity and reliability.
+          <h3 className="text-[22px] md:text-[26px] font-medium mb-2">
+            Unmatched Durability with Corrosion-Free Technology
+          </h3>
+          <p className="text-gray-600 text-[16px] md:text-[17px]">
+            Our JF-270 barbed wire features a robust 270 GSM zinc coating, ensuring superior resistance against rust and corrosion...
           </p>
         </div>
 
         {/* Card 2 */}
-        <div className="bg-gradient-to-b relative bottom-10 from-blue-900 to-blue-800 text-white shadow-lg p-10 rounded-2xl border-2  text-left">
-          <div className="mb-4">
+        <div className="bg-gradient-to-b relative md:bottom-10 from-blue-900 to-blue-800 text-white shadow-lg p-6 md:p-10 rounded-2xl border-2 text-center md:text-left">
+          <div className="mb-4 flex justify-center md:justify-start">
+
             <svg width="70.000000" height="70.000000" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
               <desc>
                 Created with Pixso.
@@ -51,18 +54,20 @@ const WhyUsSection = () => {
                 <path id="Vector" d="M24.18 48.02C26.37 44.04 30.48 41.36 35.18 41.36C39.88 41.36 43.98 44.04 46.18 48.02M35.18 33.19C31.71 33.19 28.89 30.24 28.89 26.61C28.89 22.97 31.71 20.02 35.18 20.02C38.65 20.02 41.46 22.97 41.46 26.61C41.46 30.24 38.65 33.19 35.18 33.19Z" stroke="#B0DD1D" stroke-opacity="1.000000" stroke-width="2.000000" stroke-linecap="round" />
               </g>
             </svg>
-
-
           </div>
-          <h3 className="text-[26px] font-medium mb-2">Customer-Centric Approach</h3>
-          <p className="text-[17px]">
-            At JF Products, customer satisfaction is paramount. We pride ourselves on delivering timely services, maintaining transparent communication, and ensuring a seamless purchasing experience. Our commitment to excellence is reflected in the positive feedback from our valued clients.
+          <h3 className="text-[22px] md:text-[26px] font-medium mb-2">
+            Customer-Centric Approach
+          </h3>
+          <p className="text-[16px] md:text-[17px]">
+            At JF Products, customer satisfaction is paramount. We pride ourselves on delivering timely services...
           </p>
         </div>
 
         {/* Card 3 */}
-        <div className="bg-gradient-to-br from-white to-blue-100 shadow-lg p-10 rounded-2xl text-left ">
-          <div className="mb-4">
+        <div className="bg-gradient-to-br from-white to-blue-100 shadow-lg p-6 md:p-10 rounded-2xl text-center md:text-left">
+          <div className="mb-4 flex justify-center md:justify-start">
+
+
             <svg width="70.000000" height="70.000000" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
               <desc>
                 Created with Pixso.
@@ -94,11 +99,12 @@ const WhyUsSection = () => {
                 <path id="Vector" d="M41.6 31.28L41.6 38.71L35 42.42L28.4 38.71L28.4 31.28L35 27.57L41.6 31.28Z" stroke="#000000" stroke-opacity="0.200000" stroke-width="2.000000" stroke-linejoin="round" />
               </g>
             </svg>
-
           </div>
-          <h3 className="text-[26px] font-medium mb-2">Innovative and Diverse Product Range</h3>
-          <p className="text-gray-600 text-[17px]">
-            We offer a wide array of fencing solutions, including Polyhex Mesh, Australian Trellis, and GI Poultry Mesh, catering to various needs from agricultural to residential applications. Our products combine functionality with aesthetic appeal, ensuring both security and style.
+          <h3 className="text-[22px] md:text-[26px] font-medium mb-2">
+            Innovative and Diverse Product Range
+          </h3>
+          <p className="text-gray-600 text-[16px] md:text-[17px]">
+            We offer a wide array of fencing solutions, including Polyhex Mesh, Australian Trellis...
           </p>
         </div>
       </div>
@@ -113,3 +119,9 @@ const WhyUsSection = () => {
 };
 
 export default WhyUsSection;
+
+
+
+
+
+
