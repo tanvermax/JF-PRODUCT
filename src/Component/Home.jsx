@@ -11,14 +11,16 @@ import ContactBranch from './ContactBranch';
 const Home = () => {
     return (
         <div>
-            <GrassWallSlider/>
-            <Slider/>
-            <Landscape/>
-            <TrustIndicators/>
-            <WhyUsSection/>
-            <ShippingQualityBanner/>
-            <Testimonial/>
-            <ContactBranch/>
+            <GrassWallSlider />
+            <Slider />
+            <Landscape />
+            <TrustIndicators />
+            <WhyUsSection />
+            <div className='py-14 overflow-hidden -ml-3'>
+                <ShippingQualityBanner />
+            </div>
+            <Testimonial />
+            <ContactBranch />
         </div>
     );
 };
