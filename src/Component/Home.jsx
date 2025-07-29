@@ -10,7 +10,7 @@ import ContactBranch from './ContactBranch';
 
 const Home = () => {
     return (
-        <div>
+        <div className='overflow-x-hidden '>
             <GrassWallSlider />
             <Slider />
             <Landscape />
