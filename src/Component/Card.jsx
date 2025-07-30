@@ -1,21 +1,24 @@
-// Card.jsx
 import React from 'react';
 
-const Card = ({ image, title, description }) => {
+const ProductCard = ({ name, price, photo, hasButton }) => {
   return (
-    <div className="card bg-base-100  shadow-sm mx-2">
-      <figure>
-        <img className='p-4' src={image} alt={title} />
-      </figure>
-      <div className="card-body">
-        <h2 className="card-title">{title}</h2>
-        <p>{description}</p>
-        <div className="card-actions justify-end">
-          <button className="btn btn-primary">Buy Now</button>
-        </div>
+    <div className="flex-1 min-w-[250px] max-w-full md:w-auto bg-[#F2F4F6] rounded-lg shadow-md p-1 hover:shadow-lg transition-shadow">
+      <div className="p-3">
+        <img
+          className="rounded-3xl md:h-64 h-34 w-full object-cover"
+          src={photo}
+          alt={name}
+        />
+        <h3 className="md:text-xl md:h-18 h-10 py-4 font-semibold mb-2">{name}</h3>
+        <p className="text-gray-600 pb-5">{price}</p>
+        {hasButton && (
+          <button className="bg-[#B0DD1D] text-black hover:bg-green-700 py-2 px-4 rounded-4xl transition-colors">
+            Shop Now
+          </button>
+        )}
       </div>
     </div>
   );
 };
 
-export default Card;
+export default ProductCard;

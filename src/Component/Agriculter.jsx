@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { BsArrowRightCircle } from "react-icons/bs";
+import ProductCard from './Card';
 
 const ProductCarousel = () => {
   const products = [
@@ -105,21 +106,13 @@ const ProductCarousel = () => {
         {/* Cards Container */}
         <div className="flex flex-wrap md:flex-nowrap gap-6 overflow-hidden transition-all duration-300">
           {visibleProducts.map((product) => (
-            <div
+            <ProductCard
               key={product.id}
-              className="flex-1 min-w-[250px] max-w-full md:w-auto bg-[#F2F4F6] rounded-lg shadow-md p-1 hover:shadow-lg transition-shadow"
-            >
-              <div className="p-3">
-                <img className="rounded-3xl md:h-64 h-34 w-full object-cover" src={product.photo} alt={product.name} />
-                <h3 className="md:text-xl md:h-18 h-10 py-4 font-semibold mb-2">{product.name}</h3>
-                <p className="text-gray-600 pb-5">{product.price}</p>
-                {product.hasButton && (
-                  <button className="bg-[#B0DD1D] text-black hover:bg-green-700 py-2 px-4 rounded-4xl transition-colors">
-                    Shop Now
-                  </button>
-                )}
-              </div>
-            </div>
+              name={product.name}
+              price={product.price}
+              photo={product.photo}
+              hasButton={product.hasButton}
+            />
           ))}
         </div>
 
